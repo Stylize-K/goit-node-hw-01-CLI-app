@@ -3,7 +3,7 @@ const fs = require("fs/promises");
 const path = require("path");
 const { nanoid } = require("nanoid");
 
-//Створюємо абсолютний шлях для файлу contacts.json
+//Створюємо абсолютний шлях для файлу contacts.json за допомогою вбудованного модуля path
 const contactsPath = path.join(__dirname, "db", "contacts.json");
 
 // Функція отримання списку всіх контактів

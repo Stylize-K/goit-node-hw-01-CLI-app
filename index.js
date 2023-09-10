@@ -1,6 +1,8 @@
+//Імпортуємо необхідні модулі/пакети
 const contacts = require("./contacts");
 const { Command } = require("commander");
 
+//Для парсингу аргументів командного рядка використовуємо можливості модуля Commander
 const program = new Command();
 program
   .option("-a, --action <type>", "choose action")
@@ -13,7 +15,8 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-// TODO: рефакторити
+// Функцію invokeAction отримує тип виконуваної дії і необхідні аргументи. Функція викликає відповідний метод з файлу contacts.js, передаючи йому необхідні аргументи.
+
 const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
